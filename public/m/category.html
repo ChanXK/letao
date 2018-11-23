@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./lib//mui//css//mui.min.css">
+    <link rel="stylesheet" href="./lib/fontAwesome/css/font-awesome.min.css">
+    <!-- 有时候css表出不来，是因为有双斜杠 -->
+    <link rel="stylesheet/less" href="./less//category.less">
+    <script src="./lib//less//less.js"></script>
+</head>
+
+<body>
+    <!-- 头部区域 -->
+    <header id="header">
+
+
+        <a href="index.html" class="fa fa-arrow-left"></a>
+        <input type="search" class="search" placeholder="请输入搜索内容">
+        <a href="search.html" class="fa fa-search"></a>
+    </header>
+    <!-- 主体区域 -->
+    <main id="main">
+        <div class="category-left">
+            <div class="mui-scroll-wrapper left">
+                <div class="mui-scroll">
+                    <!--这里放置真实显示的DOM内容-->
+                    <ul>
+
+                        <!-- <li class="active">
+                            <a href="#" data-id="1">运动馆</a>
+                        </li> -->
+
+                        <li class="">
+                            <a href="#" data-id="2">女士馆</a>
+                        </li>
+
+                        <li class="">
+                            <a href="#" data-id="3">男士馆</a>
+                        </li>
+
+                        <li class="">
+                            <a href="#" data-id="4">帆布馆</a>
+                        </li>
+
+                        <li class="">
+                            <a href="#" data-id="5">户外管</a>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="category-right">
+            <div class="mui-scroll-wrapper right">
+                <div class="mui-scroll">
+                    <!--这里放置真实显示的DOM内容-->
+
+                    <div class="mui-row">
+
+                        <!-- 判断当前的rows数组的长度如大于0 表示有数据就要遍历 否则就不遍历显示没有数据 -->
+
+                        <div class="mui-col-xs-4">
+                            <a href="#">
+                                <img src="/mobile/images/brand1.png" alt="">
+                                <p>耐克</p>
+                            </a>
+                        </div>
+
+                        <div class="mui-col-xs-4">
+                            <a href="#">
+                                <img src="/mobile/images/brand2.png" alt="">
+                                <p>阿迪</p>
+                            </a>
+                        </div>
+
+                        <div class="mui-col-xs-4">
+                            <a href="#">
+                                <img src="/mobile/images/brand3.png" alt="">
+                                <p>新百伦</p>
+                            </a>
+                        </div>
+
+                        <div class="mui-col-xs-4">
+                            <a href="#">
+                                <img src="/mobile/images/brand4.png" alt="">
+                                <p>哥伦比亚</p>
+                            </a>
+                        </div>
+
+                        <div class="mui-col-xs-4">
+                            <a href="#">
+                                <img src="/mobile/images/brand5.png" alt="">
+                                <p>匡威</p>
+                            </a>
+                        </div>
+
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- 尾部区域 -->
+    <footer id="footer">
+        <div class="mui-row">
+            <!-- .mui-col-xs-3*4>a[href="#"]>i.fa.fa-home+span{首页} -->
+            <div class="mui-col-xs-3 active">
+                <a href="index.html" class="active">
+                    <i class="fa fa-home"></i>
+                    <span>首页</span>
+                </a>
+            </div>
+            <div class="mui-col-xs-3">
+                <a href="category.html">
+                    <i class="fa fa-bars"></i>
+                    <span>分类</span>
+                </a>
+            </div>
+            <div class="mui-col-xs-3">
+                <a href="cart.html">
+                    <i class="fa fa-shopping-cart"></i>
+                    <span>购物车</span>
+                </a>
+            </div>
+            <div class="mui-col-xs-3">
+                <a href="user.html">
+                    <i class="fa fa-user"></i>
+                    <span>会员中心</span>
+                </a>
+            </div>
+        </div>
+    </footer>
+    <script id="firstCateTpl" type="text/html">
+        {{each rows value index}}
+        <li class="{{ index==0 ? 'active':''}}">
+            <a href="#" data-id="{{value.id}}">{{value.categoryName}}</a>
+        </li>
+        {{/each}}
+    </script>
+    <script  id="secondCateTpl" type="text/html">
+        {{if rows.length>0}}
+         {{each rows value index}}
+        <div class="mui-col-xs-4">
+                <a href="#">
+                    <img src="{{value.brandLogo}}" alt="">
+                    <p>{{value.brandName}}</p>
+                </a>
+            </div>
+        {{/each}}
+        {{else}}
+        <p>已售罄，下次早点来</p>
+        {{/if }}
+    </script>
+    <script src="./lib/mui/js/mui.min.js"></script>
+    <script src="./lib/zepto/zepto.min.js"></script>
+    <script src="./lib/artTemplate/template-web.js"></script>
+    <script src="./js/category.js"></script>
+</body>
+
+</html>

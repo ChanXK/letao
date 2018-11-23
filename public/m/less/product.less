@@ -1,0 +1,68 @@
+@import 'base.less';
+#header {
+    .fa-arrow-left {
+        left: 0;
+    }
+}
+
+#main {
+    .search {
+        display: flex;
+        padding: .1rem;
+        input {
+            margin: 0;
+            border-radius: .06rem 0 0 .06rem;
+            text-align: left;
+        }
+        button {
+            border-radius: 0 .06rem .06rem 0;
+        }
+    }
+    .shelf {
+        >div {
+            float: left;
+            box-sizing: border-box;
+            padding: .05rem;
+            width: 50%;
+            .goods {
+                // display: inline-block;
+                width: 100%;
+                box-shadow: 0px 0px 1px black;
+                img {
+                    width: 100%;
+                }
+                p {
+                    margin: 0;
+                    text-align: center;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    display: -webkit-box;
+                    -webkit-box-orient: vertical;
+                    -webkit-line-clamp: 2;
+                }
+                .product-price {
+                    text-align: center; //可以直接对行内元素起作用？？
+                    // margin: 0 auto;
+                }
+                .btn-buy {
+                    display: block;
+                    margin: 0 auto;
+                }
+            }
+        }
+    }
+    .mui-col-xs-3 {
+        text-align: center;
+        font-size: .14rem;
+        line-height: .3rem;
+        background-color: #ccc;
+        a {
+            text-align: center;
+        }
+        &.active {
+            a {
+                color: red;
+            }
+        }
+    }
+}

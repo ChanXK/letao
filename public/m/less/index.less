@@ -1,0 +1,153 @@
+@import "base.less";
+@main-color: #f10;
+body {
+    font-size: .14rem;
+    overflow: hidden;
+}
+
+#header {
+    height: .45rem;
+    background-color: @main-color;
+    text-align: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 99;
+    h4 {
+        line-height: .45rem;
+        color: #fff;
+        margin: 0;
+    }
+    a {
+        color: #fff;
+        width: .45rem;
+        line-height: .45rem;
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+}
+
+img {
+    vertical-align: middle;
+}
+
+#main {
+    background-color: gold;
+    position: relative;
+    height: 100%;
+    // top: .45rem;
+    left: 0;
+    overflow: hidden;
+    #nav {
+        padding: .1rem;
+        .mui-col-xs-4 {
+            a {
+                display: block;
+                img {
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+        }
+    }
+    #banner {
+        padding: 0 .1rem;
+        .mui-row {
+            .mui-col-xs-8 {
+                .top,
+                .bottom {
+                    width: 100%;
+                    a {
+                        img {
+                            width: 50%;
+                            float: left;
+                        }
+                    }
+                }
+            }
+            .mui-col-xs-4 {
+                img {
+                    width: 100%;
+                }
+            }
+        }
+    }
+    #class {
+        padding: .1rem;
+        .title {
+            width: 100%;
+        }
+        .brand {
+          display: flex;
+          flex-wrap: wrap;
+            a {
+                width: 25%;
+                img {
+                    width: 100%;
+                }
+            } // 直接给图片25%
+            // img{
+            //     width: 25%;
+            // }
+        }
+    }
+    #sport {
+        padding: .1rem;
+        .title {
+            width: 100%;
+        }
+        .product-buy {
+            display: block;
+            margin: 0 auto;
+        }
+        
+        >div{
+            float: left;
+                box-sizing: border-box;
+                padding: .05rem;
+                width: 50%;
+            .goods {
+                // display: inline-block;
+                width: 100%;
+                box-shadow: 0px 0px 1px black;
+                img {
+                    width:100%;
+                }
+                p {
+                   margin: 0;
+                    text-align: center;
+                }
+                .product-price {
+                    
+                    text-align: center; //可以直接对行内元素起作用？？
+                    // margin: 0 auto;
+                }
+    
+            }
+        }
+    }
+}
+
+#footer{
+    height: .47rem;
+    background-color: #fff;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width:100%;
+    z-index: 99;
+    a{
+       padding: .1rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+    }
+    div.active a{
+        color: red;
+    }
+    
+}
